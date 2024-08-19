@@ -27,10 +27,10 @@ const registro_admin = async function(req,res){
                 
             })
         }else{
-            res.status(400).send({message: 'El campo contraseña es obligatorio', data:undefined});
+            res.status(200).send({message: 'El campo contraseña es obligatorio', data:undefined});
         }
     }else{
-        res.status(400).send({message:'El correo ya existe', data:undefined});
+        res.status(200).send({message:'El correo ya existe', data:undefined});
     }
 }
 
@@ -42,7 +42,7 @@ const login_admin = async function(req,res) {
     admin_arr = await Admin.find({email:data.email});
 
     if(admin_arr.length == 0){
-        res.status(400).send({message:'El correo no existe', data:undefined});
+        res.status(200).send({message:'El correo no existe', data: undefined});
     }else{
         //LOGIN
         let user = admin_arr[0];
@@ -54,7 +54,7 @@ const login_admin = async function(req,res) {
                     token: jwt.createToken(user)
                 });
             }else{
-                res.status(400).send({message:'La contraseña no es correcta', data:undefined});   
+                res.status(200).send({message:'La contraseña no es correcta', data: undefined});   
             }
     }); 
 

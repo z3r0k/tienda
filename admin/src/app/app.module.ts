@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { routing } from "./app.routing";
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent
-
+    SidebarComponent,
+    InicioComponent,
+    LoginComponent
     
   ],
   imports: [
